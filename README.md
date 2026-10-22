@@ -1,3 +1,4 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # Aegis Security Action 🛡️
 
 Automated SAST & Security Scanner for Python in GitHub Actions.
