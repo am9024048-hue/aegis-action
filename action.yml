@@ -1,1 +1,26 @@
+name: 'Aegis Code Security Scan'
+description: 'Automated static security analysis for Python code to detect vulnerabilities and secrets securely.'
+author: 'Ahmed Mohamed'
 
+inputs:
+  path:
+    description: 'The directory path in the repository to scan'
+    required: false
+    default: '.'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Python environment
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install Aegis Code Scanner from PyPI
+      run: pip install aegis-python-security-scanner
+      shell: bash
+
+    - name: Run Aegis Security Scan
+      run: aegis-scan --path "${{ inputs.path }}"
+      shell: bash
+      
